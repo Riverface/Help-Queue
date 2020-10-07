@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// imports you need
+import React from "react";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Ticket from "./Components/Ticket";
+import TicketList from "./Components/TicketList";
+import Jay from "./brave_9fFAai3W72.png";
+
+// function with the same name as the component
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+return (<React.Fragment>
+    My name brian I stinky
+    I poop
+    and I <button>fart out code sometimes</button>
+    <Header/>
+    <TicketList/>
+    <div className=''></div>
+    <Footer/>
+    <img src={Jay} alt=""/>
+    </React.Fragment>)
 }
 
+// export declairation of this component
 export default App;

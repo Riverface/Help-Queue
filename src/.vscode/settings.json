@@ -1,0 +1,8 @@
+{
+    "eslint.enable": false,
+    "jshint.enable": false,
+    "standard.enable": false,
+    "codemetrics.basics.ComplexityLevelExtreme": 100,
+    "codemetrics.basics.ComplexityLevelHigh": 50,
+    "codemetrics.basics.ComplexityLevelLow": 25
+}
