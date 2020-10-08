@@ -1,18 +1,21 @@
 import React from 'react';
-import jayRef from '../brave_9fFAai3W72.png';
 import '../App.css';
 import PropTypes from "prop-types";
+import Footer from './Footer';
 
 function Ticket(props){
   return (
     <React.Fragment>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
-      <hr/>
+    <div className='window container'>{props.location} - {props.names}
+    <button className='homebutton'>
+    </button>  
+    </div>
+    <p><em>{props.issue}</em></p>
+    <hr/>
+    <Footer className=''/>
     </React.Fragment>
   );
 }
-
 Ticket.propTypes = {
   names: PropTypes.string,
   location: PropTypes.string,
