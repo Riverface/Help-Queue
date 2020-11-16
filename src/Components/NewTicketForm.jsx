@@ -1,6 +1,8 @@
-import { v4 } from 'uuid'; // new code
 import React, { Component } from 'react'
+
 import PropTypes from "prop-types";
+import { v4 } from 'uuid'; // new code
+
 function NewTicketForm(props) {
     return (
         <React.Fragment>
