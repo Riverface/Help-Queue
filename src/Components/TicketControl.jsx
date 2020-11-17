@@ -1,3 +1,4 @@
+import EditTicketForm from './EditTicketForm';
 import NewTicketForm from './NewTicketForm';
 import React from 'react';
 import TicketDetail from './TicketDetail';
@@ -10,25 +11,39 @@ class TicketControl extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            formVisibleOnPage: true,
-            masterTicketList: [{ location: 'home', names: 'farto and farty', issue: 'too much farting' }],
-            selectedTicket: null
+            formVisibleOnPage: false,
+            masterTicketList: [],
+            selectedTicket: null,
+            editing: false
         };
+    }
+    handleEditingTicketInList = (ticketToEdit) => {
+        const editedMasterTicketList = this.state.masterTicketList
+            .filter(ticket => ticket.id !== this.state.selectedTicket.id)
+            .concat(ticketToEdit);
+        this.setState({
+            masterTicketList: editedMasterTicketList,
+            editing: true,
+
+        });
+    }
+    handleEditClick = () => {
+        console.log("handleEditClick reached!");
+        this.setState({ editing: true });
     }
     handleClick = () => {
         if (this.state.selectedTicket != null) {
-
+            this.setState({
+                formVisibleOnPage: false,
+                selectedTicket: null,
+                editing: false // new code
+            });
+        } else {
             this.setState(prevState => ({
-                formVisibleOnPage:false,
-                selectedTicket: null
+                formVisibleOnPage: !prevState.formVisibleOnPage,
             }));
         }
-        else {
-            this.setState(prevState => ({
-                formVisibleOnPage: !prevState.formVisibleOnPage
-            }));
-        }
-    };
+    }
     handleAddingNewTicketToList = (newTicket) => {
         const newMasterTicketList = this.state.masterTicketList.concat(newTicket);
         this.setState({
@@ -50,12 +65,17 @@ class TicketControl extends React.Component {
 
 
 
-    render() {
+    render(props) {
         let currentlyVisibleState = null;
         let buttonText = null;
-
-        if (this.state.selectedTicket != null) {
-            currentlyVisibleState = <TicketDetail ticket={this.state.selectedTicket} onClickingDelete = {this.handleDeletingTicket}/>;
+        if (this.state.editing) {
+            currentlyVisibleState = <EditTicketForm ticket={this.state.selectedTicket} onEditTicket={this.handleEditingTicketInList} />
+            buttonText = "Return to Ticket List";
+        } else if (this.state.selectedTicket != null) {
+            currentlyVisibleState = <TicketDetail
+                ticket={this.state.selectedTicket}
+                onClickingDelete={this.handleDeletingTicket}
+                onClickingEdit={this.handleEditClick} />
             buttonText = "Return to Ticket List";
             // While our TicketDetail component only takes placeholder data, we will eventually be passing the value of selectedTicket as a prop.
         } else if (this.state.formVisibleOnPage) {

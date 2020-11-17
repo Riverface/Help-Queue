@@ -1,23 +1,26 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { v4 } from 'uuid'
 
-function TicketDetail(props){
-  const { ticket, onClickingDelete } = props; //new code
+function TicketDetail(props) {
+    const { ticket, onClickingDelete, onClickingEdit } = props; //new code
 
-  return (
-    <React.Fragment>
-      <h1>Ticket Detail</h1>
-      <h3>{ticket.location} - {ticket.names}</h3>
-      <p><em>{ticket.issue}</em></p>
-      <button onClick={()=> onClickingDelete(ticket.id) }>Close Ticket</button> { /* new code */ }
-      <hr/>
-    </React.Fragment>
-  );
+    return (
+        <React.Fragment>
+            <h1>Ticket Detail for ticket {v4()}</h1>
+            <h3>{ticket.location} - {ticket.names}</h3>
+            <p><em>{ticket.issue}</em></p>
+            <button onClick={props.onClickingEdit}>Update Ticket</button> { /* new code */}
+            <button onClick={() => props.onClickingDelete(ticket.id)}>Close Ticket</button>
+            <hr />
+        </React.Fragment>
+    );
 }
 
 TicketDetail.propTypes = {
-  ticket: PropTypes.object,
-  onClickingDelete: PropTypes.func // new code
+    ticket: PropTypes.object,
+    onClickingDelete: PropTypes.func,
+    onClickingEdit: PropTypes.func // new code
 };
 
 export default TicketDetail;

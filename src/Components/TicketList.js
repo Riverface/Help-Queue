@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import Ticket from "./Ticket";
+import v4 from "uuid";
 
 // remove const masterTicketList = [ ... ]. We no longer want these.
 
@@ -10,6 +11,7 @@ function TicketList(props){
     <React.Fragment>
       <hr/>
       {props.ticketList.map((ticket) =>
+
         <Ticket
           whenTicketClicked = { props.onTicketSelection }
           names={ticket.names}
