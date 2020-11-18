@@ -23,8 +23,7 @@ class TicketControl extends React.Component {
             .concat(ticketToEdit);
         this.setState({
             masterTicketList: editedMasterTicketList,
-            editing: true,
-
+            editing: false,
         });
     }
     handleEditClick = () => {
@@ -33,17 +32,17 @@ class TicketControl extends React.Component {
     }
     handleClick = () => {
         if (this.state.selectedTicket != null) {
-            this.setState({
-                formVisibleOnPage: false,
-                selectedTicket: null,
-                editing: false // new code
-            });
+          this.setState({
+            formVisibleOnPage: false,
+            selectedTicket: null,
+            editing: false // new code
+          });
         } else {
-            this.setState(prevState => ({
-                formVisibleOnPage: !prevState.formVisibleOnPage,
-            }));
+          this.setState(prevState => ({
+            formVisibleOnPage: !prevState.formVisibleOnPage,
+          }));
         }
-    }
+      }
     handleAddingNewTicketToList = (newTicket) => {
         const newMasterTicketList = this.state.masterTicketList.concat(newTicket);
         this.setState({
