@@ -14,7 +14,7 @@ function NewTicketForm(props) {
     );
 
     function handleNewTicketFormSubmission(event) {
-        console.log(event);
+
         props.onNewTicketCreation({ names: event.target.names.value, location: event.target.location.value, issue: event.target.issue.value, id: v4() });
     }
 
