@@ -2,7 +2,6 @@
 import React from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
-
 import Jay from "./brave_9fFAai3W72.png";
 import TicketControl from "./Components/TicketControl.jsx";
 
