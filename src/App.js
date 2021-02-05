@@ -1,8 +1,9 @@
 // imports you need
-import React from "react";
+
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Jay from "./brave_9fFAai3W72.png";
+import React from "react";
 import TicketControl from "./Components/TicketControl.jsx";
 
 // function with the same name as the component

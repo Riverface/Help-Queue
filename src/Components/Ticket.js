@@ -24,7 +24,8 @@ Ticket.propTypes = {
   location: PropTypes.string,
   issue: PropTypes.string,
   id: PropTypes.string, // new PropType
-  whenTicketClicked: PropTypes.func // new PropType
+  whenTicketClicked: PropTypes.func, // new PropType
+  formattedWaitTime: PropTypes.string
 };
 
 export default Ticket;
