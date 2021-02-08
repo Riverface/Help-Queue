@@ -10,7 +10,8 @@ import TicketControl from "./Components/TicketControl.jsx";
 
 function App() {
 
-    return (<React.Fragment>
+    return (
+    <React.Fragment>
         <Header />
         <TicketControl />
         <Footer />

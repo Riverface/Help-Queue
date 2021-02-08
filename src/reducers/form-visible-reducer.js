@@ -1,9 +1,11 @@
+import * as c from './../actions/ActionTypes';
+
 export default (state = false, action) => {
+  console.log("Toggling form visible state");
   switch (action.type) {
-  case 'TOGGLE_FORM':
-    console.log("Toggling form visible state");
-    return !state;
-  default:
-    return state;
+    case c.TOGGLE_FORM:
+      return !state;
+    default:
+      return state;
   }
 };

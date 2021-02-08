@@ -8,8 +8,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import reducer from './reducers/ticket-list-reducer';
+import rootReducer from './reducers/index';
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
+
 
 store.subscribe(() =>
     console.log(store.getState())
