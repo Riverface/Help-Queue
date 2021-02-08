@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-
 import Moment from 'moment';
 import PropTypes from "prop-types";
+import React from 'react'
 import ReusableForm from './ReusableForm';
 import { v4 } from 'uuid'; // new code
 

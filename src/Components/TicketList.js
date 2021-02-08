@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
 import Ticket from "./Ticket";
-import v4 from "uuid";
 
 // remove const masterTicketList = [ ... ]. We no longer want these.
 

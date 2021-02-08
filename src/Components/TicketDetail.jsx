@@ -3,7 +3,7 @@ import React from "react";
 import { v4 } from 'uuid'
 
 function TicketDetail(props) {
-    const { ticket, onClickingDelete, onClickingEdit } = props; //new code
+    const { ticket } = props; //new code
 
     return (
         <React.Fragment>

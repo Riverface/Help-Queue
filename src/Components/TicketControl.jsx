@@ -1,14 +1,12 @@
 import * as a from './../actions';
 
 import EditTicketForm from './EditTicketForm';
-import Moment from 'moment';
 import NewTicketForm from './NewTicketForm';
 import PropTypes from "prop-types";
 import React from 'react';
 import TicketDetail from './TicketDetail';
 import TicketList from './TicketList';
 import { connect } from 'react-redux';
-import { v4 } from 'uuid'
 
 class TicketControl extends React.Component {
     constructor(props) {
@@ -19,6 +17,7 @@ class TicketControl extends React.Component {
             editing: false
         };
     }
+
     updateTicketElapsedWaitTime = () => {
         const { dispatch } = this.props;
         Object.values(this.props.masterTicketList).forEach(ticket => {  //errors undefined object
@@ -51,7 +50,6 @@ class TicketControl extends React.Component {
             editing: false,
             selectedTicket: null
         });
-        const { id, names, location, issue } = ticketToEdit;
         const action = a.addTicket(ticketToEdit);
         dispatch(action);
     }
