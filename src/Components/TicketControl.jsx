@@ -52,16 +52,10 @@ class TicketControl extends React.Component {
             selectedTicket: null
         });
         const { id, names, location, issue } = ticketToEdit;
-        const action = {
-            type: 'ADD_TICKET',
-            id: id,
-            names: names,
-            location: location,
-            issue: issue,
-        }
+        const action = a.addTicket(ticketToEdit);
         dispatch(action);
-
     }
+
     handleEditClick = () => {
         this.setState({ editing: true });
     }
@@ -74,9 +68,7 @@ class TicketControl extends React.Component {
             });
         } else {
             const { dispatch } = this.props;
-            const action = {
-                type: 'TOGGLE_FORM'
-            }
+            const action = a.toggleForm();
             dispatch(action);
         }
     }
